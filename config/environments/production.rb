@@ -57,6 +57,20 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
+  # Action Mailer configuration
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      address:               "smtp.sendgrid.net",
+      port:                  587,
+      user_name:             ENV['sendgrid_username'],
+      password:              ENV['sendgrid_password'],
+      authentication:        "plain",
+      enable_starttls_auto:  true
+  }
+
+  config.action_mailer.default_url_options = { host: 'metrcs.herokuapp.com/'}
+
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "metrcs_#{Rails.env}"
