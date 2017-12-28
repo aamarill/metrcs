@@ -1,0 +1,15 @@
+<h1> Registered Applications </h1>
+<div>
+  <%= button_to 'Register a new  App', new_registered_application_path, method: :get %>
+</div>
+<br>
+<div>
+  <% @user.registered_applications.each do |registered_application| %>
+    <div>
+      <h3>App Name: <%= link_to registered_application.name, registered_application_path(registered_application) %></h3>
+    <div>
+    <ul>
+      <li>App URL:  <%= registered_application.url %></li>
+    </ul>
+  <% end %>
+</div>

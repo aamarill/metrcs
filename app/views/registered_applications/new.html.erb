@@ -1,0 +1,8 @@
+<h1>Register a new app</h1>
+<div>
+  <%= form_for @registered_application do |f| %>
+    Name: <%= f.text_field :name %>
+    URL:  <%= f.text_field :url %>
+    <%= f.submit %>
+  <% end %>
+</div>
