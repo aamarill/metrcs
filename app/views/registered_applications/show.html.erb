@@ -1,5 +1,5 @@
 <h1>App name: <%= @registered_application.name %> </h1>
 <h2>App URL:  <%= @registered_application.url %></h2>
 <div>
-  <%= button_to 'Un-register App', @registered_application, method: :delete %>
+  <%= button_to 'Un-register App',{controller: 'registered_applications', action: 'destroy', id: @registered_application.id}, method: 'delete' %>
 </div>
