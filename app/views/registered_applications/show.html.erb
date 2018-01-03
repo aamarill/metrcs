@@ -3,3 +3,13 @@
 <div>
   <%= button_to 'Un-register App',{controller: 'registered_applications', action: 'destroy', id: @registered_application.id}, method: 'delete' %>
 </div>
+<br>
+<br>
+<h3>Events & count:</h3>
+<h4>
+  <ul>
+    <% @events.each do  |event|%>
+      <li><%="#{event[0]}: #{event[1].count}"%></li>
+    <% end %>
+  </ul>
+</h4>
