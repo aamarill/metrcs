@@ -1,15 +1,13 @@
-<h1>App name: <%= @registered_application.name %> </h1>
-<h2>App URL:  <%= @registered_application.url %></h2>
+<h1><%= @registered_application.name %> </h1>
+<h2><%= @registered_application.url %></h2>
 <div>
   <%= button_to 'Un-register App',{controller: 'registered_applications', action: 'destroy', id: @registered_application.id}, method: 'delete' %>
 </div>
 <br>
 <br>
-<h3>Events & count:</h3>
-<h4>
-  <ul>
-    <% @events.each do  |event|%>
-      <li><%="#{event[0]}: #{event[1].count}"%></li>
-    <% end %>
-  </ul>
-</h4>
+<h3>Application Metrics:</h3>
+<br>
+<br>
+<%= pie_chart @registered_application.events.group(:name).count %>
+<br>
+<%= line_chart @registered_application.events.group(:name).group_by_day(:created_at).count %>

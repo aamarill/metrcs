@@ -38,4 +38,9 @@ module RandomData
   def self.random_url
     "http://www.#{random_word}.com"
   end
+
+  def self.random_date_after_year_2000
+    rand(Date.new(2000,1,1)..Date.today)
+  end
+
 end

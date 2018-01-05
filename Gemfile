@@ -46,3 +46,7 @@ gem 'devise'
 gem 'figaro'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+gem 'chartkick'
+
+gem 'groupdate'
