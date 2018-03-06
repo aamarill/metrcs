@@ -1,39 +1,41 @@
-# README
+# METRCS README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application to help you track activity on other websites.
 
-Things you may want to cover:
+### Ruby version
+  * 5.1.X
 
-* Ruby version
+### System dependencies
+  * SQLite
+  * Devise
+  * Puma server
+  * SASS
+  * Figaro
+  * PostgreSQL - Will be added for deployment
 
-* System dependencies
+### Configuration
+  * Bloc.io's "Rails 5 Setup Guide" was used to initialize the app.
 
-* Configuration
-  - Bloc's rails 5 setup guide was used to initialize the rails app.
+  * Both development and production environments have the mailer configured for SMTP using SendGrid". SendGrid login credentials are protected via Figaro.
 
-  - Both development and production environments have the "action_mailer" configured
-    for SMTP using "sendgrid". Sendgrid login is protected via the "Figaro" gem.
+### Database creation
+  * SQLite is used in the development environment (see GEM file).
+  * PostgreSQL will be added to be used in the production environment.
 
-* Database creation
+### Deployment
+  * For deployment, the environment variables will not get pushed to Heroku
+    automatically, since they are in an ignored file. Figaro documentation can
+    be used to learn how to push environment variables to Heroku.
 
-* Database initialization
+  * Find out if sqlite3 can be used when deployed to Heroku or find other
+  alternatives.
 
-* How to run the test suite
+### Development
+  * Command `rake db:reset` can be used on the command line to clear current data and repalce with what is in the "db/seeds.rb" file.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-  - For deployment, the environment variables will not get pushed to Heroku
-    automatically, since they are in an ignored file. Figaro documentation can be
-    used to larn how to push environment variables to Heroku.
-
-* Events API
-  - The API accepts JSON-formatted AJAX requests from registered applications
+### Events API
+  * The API accepts JSON-formatted AJAX requests from registered applications
     using client-side javascript snippets. One way to register an event would be
     to setup the registered app's applications.js file to contain a method that
-    sends the AJAX request (e.g. `blocmetrics.report(event_name)`) and then
+    sends the AJAX request (e.g. `metrcs.report(event_name)`) and then
     calling it from the browser.
-
-
-* ...

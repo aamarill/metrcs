@@ -6,14 +6,16 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'b91f559b9693c279476e805f3a1892f2de65dd39cc4551e4014d852fe46c6aee434ed3ebe47c17bbc8febfb525c2fa08206cf95c71eb9c777e2381ae3b964c04'
+  config.secret_key = 'b91f559b9693c279476e805f3a1892f2de65dd39cc4551e4014d852fe46c6aee434ed3ebe47c17bbc8febfb525c2fa08206cf95c71eb9c777e2381ae3b964c04'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
+  # This doesn't need to be a real e-mail address, it is simply what a user
+  # will see as the sender of the email.
   # config.mailer_sender = 'aamarill.engr@gmail.com'
-  config.mailer_sender = 'devise_mailer@example.com'
+  config.mailer_sender = 'noreply@metrcs.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -112,10 +114,10 @@ Devise.setup do |config|
   # config.pepper = 'c4dc91f42d256295c7251d9caeccef845ce8a9b4b3f1eac0f73e7b4db75f27c0aedcbe6798bea39ec97b47d020dd932a0082f762f025d20f7f2b52e45cf4ca2e'
 
   # Send a notification to the original email when the user's email is changed.
-  # config.send_email_changed_notification = false
+  config.send_email_changed_notification = true
 
   # Send a notification email when the user's password is changed.
-  # config.send_password_change_notification = false
+  config.send_password_change_notification = true
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -140,7 +142,7 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
-  # config.confirmation_keys = [:email]
+  config.confirmation_keys = [:email]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.

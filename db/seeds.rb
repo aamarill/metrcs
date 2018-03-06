@@ -1,7 +1,7 @@
 require 'random_data'
 
 user = User.create!(
-	email: "aamarill.engr@gmail.com",
+	email: "fake@example.com",
 	password: "password",
 	password_confirmation: "password",
 	confirmed_at: Date.today
