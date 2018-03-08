@@ -67,7 +67,8 @@ and replace with what is in the "db/seeds.rb" file.
   Here's an example of what the service could look like. This was added to a
   to-do app that can be found here: https://do-bettr.firebaseapp.com/.
 
-  `(function(){
+  ```javascript
+  (function(){
 
   function Metrcs(){
 
@@ -86,7 +87,8 @@ and replace with what is in the "db/seeds.rb" file.
     .module('do-bettr')
     .factory('Metrcs', [Metrcs])
 
-  })();`
+  })();
+  ```
 
 ### Use with Rails
 * To use on Rails, the steps are similar to the AngularJS example above.
@@ -96,7 +98,8 @@ and replace with what is in the "db/seeds.rb" file.
   JavaScript colliding with JavaScript from your application. So, your code
   could look like this:
 
-  `var metrcs = {};
+  ```javascript
+  var metrcs = {};
 
   metrcs.report = function(eventName){
     var event = {event:{name: eventName}};
@@ -104,8 +107,11 @@ and replace with what is in the "db/seeds.rb" file.
     request.open("POST", "https://metrcs.herokuapp.com/api/events", true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify(event));
-  }`
+  }
+  ```
 
   This method is now available to be used anywhere in your application like
   this:
+
+  
   `<a href="/about onclick="metrcs.report('about link clicked')">`
