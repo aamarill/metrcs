@@ -46,8 +46,13 @@ and replace with what is in the "db/seeds.rb" file.
   would be following:
 
   ```http
-  curl -v -H "Accept: application/json" -H "Origin: www.your-registered-application.com" -H "Content-Type: application/json" -X
-  POST -d '{"name":"event"}'  http://localhost:3000/api/events
+  curl -v -H "Accept: application/json"
+
+  -H "Origin: www.your-registered-application.com"
+
+  -H "Content-Type: application/json"
+
+  -X POST -d '{"name":"event"}'  http://localhost:3000/api/events
   ```
 
   Here, `www.your-registered-application.com` should be the URL to the
