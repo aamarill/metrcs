@@ -70,22 +70,22 @@ and replace with what is in the "db/seeds.rb" file.
   ```javascript
   (function(){
 
-  function Metrcs(){
+    function Metrcs(){
 
-    Metrcs.report = function(eventName){
-      var event = {event:{name: eventName}};
-      var request = new XMLHttpRequest();
-      request.open("POST", "https://metrcs.herokuapp.com/api/events", true);
-      request.setRequestHeader('Content-Type', 'application/json');
-      request.send(JSON.stringify(event));
+      Metrcs.report = function(eventName){
+        var event = {event:{name: eventName}};
+        var request = new XMLHttpRequest();
+        request.open("POST", "https://metrcs.herokuapp.com/api/events", true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify(event));
+      }
+
+      return Metrcs
     }
 
-    return Metrcs
-  }
-
-  angular
-    .module('do-bettr')
-    .factory('Metrcs', [Metrcs])
+    angular
+      .module('do-bettr')
+      .factory('Metrcs', [Metrcs])
 
   })();
   ```
@@ -113,5 +113,5 @@ and replace with what is in the "db/seeds.rb" file.
   This method is now available to be used anywhere in your application like
   this:
 
-  
+
   `<a href="/about onclick="metrcs.report('about link clicked')">`
