@@ -4,6 +4,7 @@ Simply add a bit of JavaScript to your application and you're all set.
 There is one implementation example documented here on the "How to use"
 section for an AngularJS app. Also, it is explained how you could analogously
 use Metrcs on a Rails app.
+https://metrcs.herokuapp.com
 
 ## Ruby version
 * 5.1.X
@@ -46,18 +47,15 @@ and replace with what is in the "db/seeds.rb" file.
   would be following:
 
   ```http
-  curl -v -H "Accept: application/json"
-
-  -H "Origin: www.your-registered-application.com"
-
-  -H "Content-Type: application/json"
-
-  -X POST -d '{"name":"event"}'  http://localhost:3000/api/events
+  curl -v -H "Accept: application/json" -H "Origin:www.your-registered-application.com" -H "Content-Type: application/json" -X POST -d '{"name":"event"}' http://metrcs-url.com/api/events
   ```
 
   Here, `www.your-registered-application.com` should be the URL to the
   registered app you're tracking on Metrcs. Also, `event` should be the name
-  of the event you are tacking (e.g. click, visit, sign-in etc).
+  of the event you are tacking (e.g. click, visit, sign-in etc). Lastly, the
+  `metrcs-url` is the URL to wherever Metrcs is running. It can be the deployed
+  version https://metrcs.herokuapp.com or whatever port you are running it on
+  locally.
 
   Note that you don't have to specify a user because Metrcs assumes that each
   URL is unique (owned) to a specific user. The Metrcs creator acknowledges this
