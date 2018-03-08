@@ -114,4 +114,6 @@ and replace with what is in the "db/seeds.rb" file.
   this:
 
 
-  `<a href="/about onclick="metrcs.report('about link clicked')">`
+  ```html
+  <a href="/about onclick="metrcs.report('about link clicked')">
+  ```
