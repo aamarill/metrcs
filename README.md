@@ -45,7 +45,10 @@ and replace with what is in the "db/seeds.rb" file.
   from a registered app on the `Origin` header of the request. The format
   would be following:
 
-  `curl -v -H "Accept: application/json" -H "Origin: www.your-registered-application.com" -H "Content-Type: application/json" -X POST -d '{"name":"event"}'  http://localhost:3000/api/events`
+  ```http
+  curl -v -H "Accept: application/json" -H "Origin: www.your-registered-application.com" -H "Content-Type: application/json" -X
+  POST -d '{"name":"event"}'  http://localhost:3000/api/events
+  ```
 
   Here, `www.your-registered-application.com` should be the URL to the
   registered app you're tracking on Metrcs. Also, `event` should be the name
