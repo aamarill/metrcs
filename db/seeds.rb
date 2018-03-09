@@ -1,4 +1,5 @@
 require 'random_data'
+require 'faker'
 
 user = User.create!(
 	email: "fake@example.com",
@@ -8,18 +9,20 @@ user = User.create!(
 )
 
 5.times do
-  application_name = RandomData.random_word
-  url  = "www.#{application_name}.com"
-  user.registered_applications.create({name: application_name, url: url})
+  domain    = Faker::ProgrammingLanguage.name
+  last_name = Faker::Name.last_name
+  url       = "http://#{domain}.com/#{last_name}"
+  user.registered_applications.create({name: domain, url: url})
 end
 
-events = ['visit', 'click', 'sign-up', 'sign-in']
+events = ['visit', 'ad-click', 'sign-in', 'purchase', 'sign-up']
 
-30.times do
+200.times do
   registered_application_index = Random.rand(5)
   event_index = Random.rand(4)
   event_name  = events[event_index]
-  created_at = RandomData.random_date_after_year_2000
+  # created_at = RandomData.random_date_after_year_2000
+  created_at = rand(Date.new(2018,1,1)..Date.today)
   user.registered_applications[registered_application_index].events.create({name: event_name, created_at: created_at})
 end
 
