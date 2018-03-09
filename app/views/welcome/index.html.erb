@@ -1,2 +1,34 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<% if current_user %>
+  <h1>
+    Welcome <%= "#{current_user.email}" %>!
+  </h1>
+  <br>
+  <p style="display: inline">
+    Navigate to the <h4 style="display: inline">registered applications</h4>
+    tab to see all of your registered sites.
+  </p>
+<% else %>
+  <h1> Welcome to Metrcs </h1>
+  <p>
+    Go to this app's
+      <a href=https://github.com/aamarill/metrcs/blob/master/README.md>
+        README
+      </a>
+    to learn how to start tracking activity on your applications.
+  </p>
+  <br>
+  <br>
+  <p> To see an example of what tracking data looks like, simply log in
+    with the following credentials.
+  </p>
+  <ul>
+    <li>
+      <h5 style="display: inline">Username:</h5>
+      <p style="display: inline"> fake@example.com</p>
+    </li>
+    <li>
+      <h5 style="display: inline">Password:</h5>
+      <p style="display: inline"> password</p>
+    </li>
+  </ul>
+<% end %>

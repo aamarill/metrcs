@@ -6,10 +6,10 @@
 <div>
   <% @user.registered_applications.each do |registered_application| %>
     <div>
-      <h3>App Name: <%= link_to registered_application.name, user_registered_application_path(id: registered_application.id) %></h3>
+      <h3><%= link_to registered_application.name, user_registered_application_path(id: registered_application.id) %></h3>
     <div>
     <ul>
-      <li>App URL:  <%= registered_application.url %></li>
+      <li class="text-muted">URL:  <%= registered_application.url %></li>
     </ul>
   <% end %>
 </div>

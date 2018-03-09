@@ -12,6 +12,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'chartkick'
 gem 'groupdate'
 gem 'thor', '0.20.0'
+
+# CSS framework (Bootstrap)
 gem 'bootstrap-sass'
 
 # PostgreSQL is used as the database for all environments.
