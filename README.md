@@ -1,7 +1,8 @@
-# METRCS README
-This is an application to help you track activity on other applications.
-Simply add a bit of JavaScript to your application and you're all set.
-There is one implementation example documented here on the "How to use"
+# Metrcs
+This is an application to help you track activity on other applications. Simply
+add a bit of JavaScript to your application and you're all set. :raised_hands:
+
+There is one implementation example documented here in the "How to use"
 section for an AngularJS app. Also, it is explained how you could analogously
 use Metrcs on a Rails app.
 https://metrcs.herokuapp.com
@@ -20,7 +21,7 @@ https://metrcs.herokuapp.com
 * Both development and production environments have the mailer configured for
   SMTP using SendGrid. SendGrid login credentials are protected via Figaro.
 
-* All environments use postgreSQL for their database.
+* All environments use postgreSQL as their database.
 
 ## Deployment
 * This is currently hosted by Heroku (https://metrcs.herokuapp.com).
@@ -28,9 +29,12 @@ https://metrcs.herokuapp.com
 * For deployment, the environment variables will not get pushed to Heroku
   automatically, since they are in an ignored file. Figaro gem documentation
   can be used to learn how to push environment variables to Heroku.
+  (https://github.com/laserlemon/figaro)
 
 * Remember to migrate the database to Heroku as needed. The database can be
   completely emptied out and/or seeded with your own data.
+
+* `heroku run rake db:migrate` can be used to migrate the database to Heroku.
 
 ## Development
 * `rake` commands can be used on the command line to clear current data
@@ -40,10 +44,11 @@ and replace with what is in the "db/seeds.rb" file.
 * The API accepts JSON-formatted HTTP requests using client-side javascript from
   registered applications.
 
-* To see how you can track your app's behavior on Metrcs read the next section.
+* To see how you can track your app's behavior on Metrcs read the "How to use"
+  section.
 
-* To test the API you can send an HTTP request from anywhere and include a URL
-  from a registered app on the `Origin` header of the request. The format
+* To test the API you can send an HTTP request from anywhere, just include the
+  URL of a registered app on the `Origin` header of the request. The format
   would be following:
 
   ```http
